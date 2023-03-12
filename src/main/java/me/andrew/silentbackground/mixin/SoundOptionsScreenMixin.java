@@ -10,6 +10,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -60,7 +61,7 @@ public abstract class SoundOptionsScreenMixin extends GameOptionsScreen {
             }
         }
 
-        this.addDrawableChild(new ButtonWidget(x, y, 150, 20, Text.translatable("options.backgroundSounds"), (button) -> {
+        this.addDrawableChild(new ButtonWidget(x, y, 150, 20, new TranslatableText("options.backgroundSounds"), (button) -> {
             this.client.setScreen(new BackgroundSoundOptionsScreen(this, this.gameOptions));
         }));
     }
